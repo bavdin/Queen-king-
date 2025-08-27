@@ -15,12 +15,12 @@ module.exports.config = {
 
 module.exports.run = async function({ api, args, Users, event}) {
     var mention = Object.keys(event.mentions)[0];
-    if(!mention) return api.sendMessage("YOUR FATHER CHUZA  ENTER 💓🌞", event.threadID);
+    if(!mention) return api.sendMessage("YOUR FATHER GABBAR  ENTER 💓🌞", event.threadID);
  let name =  event.mentions[mention];
     var arraytag = [];
         arraytag.push({id: mention, tag: name});
     var a = function (a) { api.sendMessage(a, event.threadID); }
-a("THE ALONE GANG DESTROYER MR.AARYAN BABU ENTER 💓🍓");
+a("THE ALONE GANG DESTROYER MR.GABBAR BABU ENTER 💓🍓");
 setTimeout(() => {a({body: "TERRI AMAAA KIIIII CHUTTTTT MAARUUUUU MADARCHOD KEE BACCHEEE CHAALLL AJAA TERAA BAAAPPP READYYY HAIIII ABBBH 😈😈😈।" + " " + name, mentions: arraytag})}, 3000);
 setTimeout(() => {a({body: "‎AAJAAA RANNDDIIII KAA BACHAA DARRRR MAATTT CHAALLLLL COOOVERRR KAARRR BAAAPPPP BOLLLLL .." + " " + name, mentions: arraytag})}, 5000);
 setTimeout(() => {a({body: "‎ TERRI NANIIII KI KALIIII GANDDD MARUUUUU MADARCHOD DAARRRRRR MAATTTTTT CHINNAALLL KEE BACCHEE 😈😈😈༅༎•❤️🌸🐰" + " " + name, mentions: arraytag})}, 7000);
