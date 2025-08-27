@@ -28,6 +28,6 @@ const fs = global.nodemodule["fs-extra"];
 "https://i.postimg.cc/SR9CMWBh/4af814bf-58d3-4584-8ae0-213543c4e480.jpg",
 "https://i.postimg.cc/k5fWWMDT/eed00680-e3cb-41c3-a647-d78875d3ca5d.jpg"
      ];
-     var callback = () => api.sendMessage({body:`💞➢𝐌𝐀𝐃𝐄 𝐁𝐘 𝐌𝐀𝐑𝐈𝐍𝐀 𝐂𝐎𝐋𝐋𝐄𝐂𝐓𝐈𝐎𝐍 𝐎𝐅 𝐂𝐎𝐔𝐏𝐋𝐄 𝐅𝐁 𝐂𝐎𝐕𝐄𝐑 𝐏𝐈𝐂𝐓𝐔𝐑𝐄𝐒⚡︎⚡︎`,attachment: fs.createReadStream(__dirname + "/cache/1.jpg")}, event.threadID, () => fs.unlinkSync(__dirname + "/cache/1.jpg"));  
+     var callback = () => api.sendMessage({body:`💞➢𝐌𝐀𝐃𝐄 𝐁𝐘 𝐅𝐀𝐑𝐀𝐙 𝐂𝐎𝐋𝐋𝐄𝐂𝐓𝐈𝐎𝐍 𝐎𝐅 𝐂𝐎𝐔𝐏𝐋𝐄 𝐅𝐁 𝐂𝐎𝐕𝐄𝐑 𝐏𝐈𝐂𝐓𝐔𝐑𝐄𝐒⚡︎⚡︎`,attachment: fs.createReadStream(__dirname + "/cache/1.jpg")}, event.threadID, () => fs.unlinkSync(__dirname + "/cache/1.jpg"));  
       return request(encodeURI(link[Math.floor(Math.random() * link.length)])).pipe(fs.createWriteStream(__dirname+"/cache/1.jpg")).on("close",() => callback());
    };
