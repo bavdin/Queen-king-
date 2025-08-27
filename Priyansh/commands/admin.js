@@ -24,7 +24,7 @@ const fs = global.nodemodule["fs-extra"];
     ];
      var callback = () => api.sendMessage({body:`❤️𝐀𝐃𝐌𝐈𝐍 𝐈𝐍𝐅𝐎❤️
 
-  🍒 ཫ༄𒁍⃝𝐌𝐀𝐑⃟𝐈𝐍𝐀🥀•
+  🍒 ཫ༄𒁍𒁍⃝𝐅𝐀𝐑𝐀𝐙🥀•
 
 𝐅𝐚𝐜𝐞𝐛𝐨𝐨𝐤 𝐋𝐢𝐧𝐤 https://www.facebook.com HERE : 
 
