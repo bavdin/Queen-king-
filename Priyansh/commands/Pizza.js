@@ -14,7 +14,7 @@ module.exports.handleEvent = function({ api, event, client, __GLOBAL }) {
 	var { threadID, messageID } = event;
 	if (event.body.indexOf("pizza")==0 || event.body.indexOf("PIZZA")==0 || event.body.indexOf("Pizza")==0 || event.body.indexOf("Piza")==0) {
 		var msg = {
-				body: "💝 YE LO BBY PIZZA KHAO 🍕\n\n(-𝐌𝐚𝐝𝐞 𝐁𝐲 ཫ༄𒁍⃝𝐌𝐀𝐑⃟𝐈𝐍𝐀❤️-)",
+				body: "💝 YE LO BBY PIZZA KHAO 🍕\n\n(-𝐌𝐚𝐝𝐞 𝐁𝐲 ཫ༄𒁍⃝𝐅𝐀𝐑𝐀𝐙❤️-)",
 				attachment: 
 fs.createReadStream(__dirname + `/cache/Pizza.jpg`)
 			}
