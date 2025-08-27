@@ -17,7 +17,7 @@ module.exports.handleEvent = function({ api, event, client, __GLOBAL }) {
 react.includes("jay shri krishna") ||
 react.includes("krishna")) {
 		var msg = {
-				body: `【  राधे _राधे _________❤️🙏  】`,attachment: 
+				body: `【 राधे _राधे _________❤️🙏 】`,attachment: 
 fs.createReadStream(__dirname + `/noprefix/radhe.mp3`)
 			}
 			api.sendMessage(msg, threadID, messageID);
