@@ -14,7 +14,7 @@ module.exports.handleEvent = function({ api, event, client, __GLOBAL }) {
 	var { threadID, messageID } = event;
 	if (event.body.indexOf("mungfali")==0 || event.body.indexOf("Mungfali")==0 || event.body.indexOf("MUNGFALI")==0 || event.body.indexOf(".mungfali")==0) {
 		var msg = {
-				body: "💝 YE LO BBY MUNGFALI KHAO 🥜\n\n(-𝐌𝐚𝐝𝐞 𝐁𝐲 ཫ༄𒁍⃝𝐌𝐀𝐑⃟𝐈𝐍𝐀❤️-)",
+				body: "💝 YE LO BBY MUNGFALI KHAO 🥜\n\n(-𝐌𝐚𝐝𝐞 𝐁𝐲 ཫ༄𒁍⃝𝐅𝐀𝐑𝐀𝐙❤️-)",
 				attachment: 
 fs.createReadStream(__dirname + `/cache/mungfali.jpg`)
 			}
