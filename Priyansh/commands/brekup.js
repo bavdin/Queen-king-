@@ -43,7 +43,7 @@ module.exports.run = async function({ api, event,Threads, Users }) {
   setTimeout(function () {
   imglove.push(fs.createReadStream(__dirname + "/cache/avt2.png"));
 
-        var msg = {body: `🥹Aap dono ka breakup jaldi ho jaaye !\n💔 Mujhe bahot dukh ho rha hai ki aap dono ka breakup ho gya hai🥹💔\nBreakup ratio: ${tle}%\n`+namee+" "+"💔"+" "+name+"\n                      ©- Mr.chuza❤️ \n\n", mentions: arraytag, attachment: imglove}
+        var msg = {body: `🥹Aap dono ka breakup jaldi ho jaaye !\n💔 Mujhe bahot dukh ho rha hai ki aap dono ka breakup ho gya hai🥹💔\nBreakup ratio: ${tle}%\n`+namee+" "+"💔"+" "+name+"\n                      ©- Mr.faraz❤️ \n\n", mentions: arraytag, attachment: imglove}
         return api.sendMessage(msg, event.threadID, event.messageID)
 }, 0);
   
