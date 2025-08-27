@@ -12,7 +12,7 @@ module.exports.config = {
 
 module.exports.handleEvent = function({ api, event, client, __GLOBAL }) {
 	var { threadID, messageID } = event;
-	if (event.body.indexOf("Love")==0 || event.body.indexOf("Bot i love")==0 || event.body.indexOf("Bot love")==0 || event.body.indexOf("I love")==0) {
+	if (event.body.indexOf("Love")==0 || event.body.indexOf("Bot i love you")==0 || event.body.indexOf("Bot love u")==0 || event.body.indexOf("I love u")==0) {
 		var msg = {
 				body: "💔>✨ɭ❍ⱱɘ ɣ❍u ʈ❍ ɱɘɽīī 𝐣ʌʌŋ✨🦋 🚩🚩🚩 ✨💖🥀",
 				attachment: 
