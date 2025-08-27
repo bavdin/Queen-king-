@@ -1,11 +1,11 @@
 module.exports.config = {
-  name: "pair",
+  name: "Pair",
   version: "1.0.0", 
   hasPermssion: 0,
   credits: "D-Jukie (Xuyên get)",
   description: "Pairing",
   commandCategory: "Love", 
-  usages: "pair", 
+  usages: "Pair", 
   cooldowns: 15
 };
 module.exports.run = async function({ api, event,Threads, Users }) {
