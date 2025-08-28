@@ -1,6 +1,6 @@
 const fs = require("fs");
 module.exports.config = {
-	name: "anaya",
+	name: "JANNT",
     version: "1.0.1",
 	hasPermssion: 0,
 	credits: "ARuN", 
@@ -14,7 +14,7 @@ module.exports.handleEvent = function({ api, event, client, __GLOBAL }) {
 	var { threadID, messageID } = event;
 	if (event.body.indexOf("anaya")==0 || event.body.indexOf("Anaya")==0 || event.body.indexOf("ANAYA")==0 || event.body.indexOf("@Zɩɗɗɩ Qʋɘɘŋ")==0) {
 		var msg = {
-				body: "===𝘼𝙉𝘼𝙔𝘼 𝙏𝙃𝘼𝙆𝙐𝙍 𝙈𝙀𝙍𝙄 𝙅𝘼𝘼𝙉 𝙃𝘼𝙄=== 😘❤❤😍",
+				body: "===𝗝𝗔𝗡𝗡𝗧 𝗕𝗔𝗕𝗬 𝙈𝙀𝙍𝙄 𝙅𝘼𝘼𝙉 𝙃𝘼𝙄=== 😘❤❤😍",
 				attachment: fs.createReadStream(__dirname + `/noprefix/anaya.jpg`)
 			}
 			api.sendMessage(msg, threadID, messageID);
