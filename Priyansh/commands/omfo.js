@@ -15,7 +15,7 @@ module.exports.handleEvent = function({ api, event, client, __GLOBAL }) {
   if(react.includes("omfo") ||
      react.includes("OMFO") || react.includes("Omfo") || react.includes("oomfo") ||
 react.includes("omfu") ||
-react.includes("mfoo")) {
+react.includes("omffo")) {
     var msg = {
         body: `ले भईये ओम्फो🙃👈😆`,
       }
