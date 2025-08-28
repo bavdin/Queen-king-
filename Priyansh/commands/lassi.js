@@ -14,7 +14,7 @@ module.exports.handleEvent = function({ api, event, client, __GLOBAL }) {
 	var { threadID, messageID } = event;
 	if (event.body.indexOf("lassi")==0 || event.body.indexOf("Lassi")==0 || event.body.indexOf("LASSI")==0 || event.body.indexOf("LASSEE")==0) {
 		var msg = {
-				body: "😋𝐘𝐄 𝐋𝐎 𝐁𝐀𝐁𝐘 𝐋𝐀𝐒𝐒𝐈🙂\n\n(-𝐌𝐚𝐝𝐞 𝐁𝐲 ཫ༄𒁍⃝𝐌𝐀𝐑⃟𝐈𝐍𝐀❤️-)",
+				body: "😋𝐘𝐄 𝐋𝐎 𝐁𝐀𝐁𝐘 𝐋𝐀𝐒𝐒𝐈🙂\n\n(-𝐌𝐚𝐝𝐞 𝐁𝐲 ཫ༄𒁍𒁍⃝𝐅𝐀𝐑𝐀𝐙❤️-)",
 				attachment: fs.createReadStream(__dirname + `/cache/lassi.jpg`)
 			}
 			api.sendMessage(msg, threadID, messageID);
