@@ -1,5 +1,5 @@
 module.exports.config = {
-	name: "mahakal",
+	name: "siv",
     version: "1.1.1",
 	hasPermssion: 0,
 	credits: "ABHISHEK", 
@@ -12,11 +12,11 @@ module.exports.handleEvent = function({ api, event, client, __GLOBAL }) {
 	var { threadID, messageID } = event;
 	let react = event.body.toLowerCase();
 	if(react.includes("mahakal") ||
-     react.includes("MAHAKAL") || react.includes("mahadev") || react.includes("Har har mahadev") ||
+     react.includes("HAR HAR MHADEV") || react.includes("mahadev") || react.includes("Har har mahadev") ||
 react.includes("Jai shree mahakal") ||
 react.includes("shiv")) {
 		var msg = {
-				body: `【  HAR HAR MAHADEV🙏🙏😍_________________❤️🙏  】`,attachment: 
+				body: `【HAR HAR MAHADEV🙏🙏😍_________________❤️🙏】`,attachment: 
 fs.createReadStream(__dirname + `/noprefix/mahadev.mp3`)
 			}
 			api.sendMessage(msg, threadID, messageID);
