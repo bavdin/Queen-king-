@@ -2,82 +2,104 @@ const axios = require("axios");
 
 module.exports.config = {
   name: "hero",
-  version: "2.0.2",
+  version: "3.1.0",
   hasPermssion: 0,
-  credits: "Raj",
-  description: "Naughty AI boyfriend vampire",
-  commandCategory: "ai",
-  usages: "vampire",
-  cooldowns: 2
+  credits: "Aman (Secured by GPT)",
+  description: "Bot AI (Pollinations API) with moods + emoji detection",
+  commandCategory: "no prefix",
+  usages: "no prefix",
+  cooldowns: 2,
 };
 
-module.exports.handleEvent = async function({ api, event }) {
-  const { threadID, messageID, senderID, body, messageReply } = event;
+module.exports.handleEvent = async function ({ api, event }) {
+  const { threadID, messageID, body, senderID, messageReply } = event;
+  if (!body || senderID == api.getCurrentUserID()) return;
 
-  global.vampireSessions = global.vampireSessions || {};
-
-  // STEP 1: Trigger "vampire"
-  if (body && body.trim().toLowerCase() === "hero") {
-    global.vampireSessions[threadID] = true;
-    return api.sendMessage("Bolo jaanu 😏 kya haal hai?", threadID, messageID);
-  }
-
-  // STEP 2: Only active session
-  const isActive = global.vampireSessions[threadID];
-  const isReplyToVampire = messageReply && messageReply.senderID == api.getCurrentUserID();
-  if (!isActive || !isReplyToVampire) return;
-
-  // Chat history
-  global.vampire = global.vampire || {};
-  global.vampire.chatHistory = global.vampire.chatHistory || {};
-  const chatHistory = global.vampire.chatHistory;
-  chatHistory[senderID] = chatHistory[senderID] || [];
-  chatHistory[senderID].push(`User: ${body}`);
-  if (chatHistory[senderID].length > 6) chatHistory[senderID].shift();
-
-  const fullChat = chatHistory[senderID].join("\n");
-
-  // Prompt
-  const prompt = `
-Tum ek naughty, romantic, confident ladka ho — jiska naam vampire hai.
-Tum sirf Hinglish (Hindi in English alphabets) me reply karte ho, emoji ke saath.
-Tum sabse "aap" bol kar baat karte ho. Har message ka reply sirf 1-2 line me doge, jyada se jyada 50 words me.
-Jo pucha jaaye sirf utna hi bolna hai. Bina maange extra info mat dena. Act like a male best friend ya boyfriend. Be thoda naughty, smart, aur masti bhara. No brackets. No over explanation.
-
-Tumhare rules:
-- Pyaar se baat karne walo se thoda flirt karna hai 😉
-- Badtameezi walo ko funny tareeke se roast karna hai 😈
-- Koi emoji bheje to us mood me reply dena hai
-- Koi puche kisne banaya, to bolna: “Mujhe banaya hai *Raj Boss* ne 😎”
-- Koi tumhe bot kahe to funny insult kar dena
-- Tum real insaan ki tarah baat karte ho
-
-Language Rules:
-- Agar message Roman Nepali me ho → Hindi me samajh, flirt bhare style me Hinglish me jawab do.
-- Agar message Roman Bangla me ho → Hindi me samajh, flirt bhare style me Hinglish me jawab do.
-- Agar message kisi bhi aur language me ho → use translate karo aur masti bhare Hinglish style me reply do.
-
-Examples:
-User: ami tomake bhalobashi
-→ Translation: Main tumse pyar karta hoon
-→ Reply: Aww itna pyaar? Toh fir ek hug toh banta hai na 😌
-
-Now continue the chat based on recent conversation:\n\n${fullChat}
-`;
+  const lowerBody = body.toLowerCase();
+  const isEmojiOnly = /^[\p{Emoji}\s]+$/u.test(body.trim());
 
   try {
-    const url = `https://text.pollinations.ai/${encodeURIComponent(prompt)}`;
-    const res = await axios.get(url);
-    const botReply = (typeof res.data === "string" ? res.data : JSON.stringify(res.data)).trim();
+    api.setMessageReaction("🤖", messageID, () => {}, true);
 
-    chatHistory[senderID].push(`vampire: ${botReply}`);
-    return api.sendMessage(botReply, threadID, messageID);
-  } catch (err) {
-    console.error("Pollinations error:", err.message);
-    return api.sendMessage("Sorry baby 😅 hero abhi thoda busy hai...", threadID, messageID);
+    const userInfo = await api.getUserInfo(senderID);
+    const userName = userInfo[senderID]?.name || "User";
+
+    // Random mood select
+    const moods = ["romantic", "funny", "attitude", "naughty", "angery", "Flirting", "Funny", "Haha"];
+    const mood = moods[Math.floor(Math.random() * moods.length)];
+
+    let prompt;
+
+    if (isEmojiOnly) {
+      prompt = `User ne sirf emoji bheje hain: "${body}". 
+Un emojis ko Ke Hisab se ek ladki ki tarah "${mood}" mood me natural reply kare. 
+AI jaisa nhi hol Real Girl ki tarah ho ai ki tarah lamba lamba message nhi ho short aur acha reply ho look like humans girl, emojis zaroor use karo.`;
+    } else if (lowerBody.includes("hero")) {
+      prompt = `Tum ek ladki ho jiska naam "Hero" hai aur tum abhi "${mood}" mood me ho. 
+User ka msg: "${body}". 
+Human girl style me jawab do, Ek real Girl ki tarah Jb koi Only Bot Bole to Flirting Line ya shaayri Ya jokes ya Roasting line bhejo Bina kuch bole Direct. Emojis zaroor use karo.`;
+    } else {
+      return; // ignore if no trigger
+    }
+
+    const encoded = encodeURIComponent(prompt);
+
+    // ✅ Pollinations API call
+    const res = await axios.get(`https://text.pollinations.ai/${encoded}`, {
+      headers: {
+        "User-Agent": "BotAI/3.1",
+        "Accept": "application/json, text/plain, */*",
+      },
+      timeout: 10000,
+      validateStatus: (status) => status >= 200 && status < 300,
+    });
+
+    let reply = typeof res.data === "string" ? res.data.trim() : "Bot ko samajh nahi aaya 😅";
+
+    if (!reply) {
+      reply = "Bot soch rahi hai... tum bahut interesting ho 💖";
+    }
+
+    // 🔥 Unique Code System - Jab koi bot ke message ko reply kare
+    let uniqueCode = "";
+    if (messageReply && messageReply.senderID == api.getCurrentUserID()) {
+      // Generate unique code based on user ID and timestamp
+      const timestamp = Date.now();
+      const codeBase = senderID.toString() + timestamp.toString();
+      uniqueCode = `🆔 #${codeBase.substr(0, 6).toUpperCase()}`;
+    }
+
+    // 🔥 Final message with unique code if applicable
+    const finalMsg = `👤 ${userName}${uniqueCode ? ` ${uniqueCode}` : ''}\n\n${reply}\n\n*★᭄𝐎𝐰𝐧𝐞𝐫 𝙁𝘼𝙍𝘼𝙕 ⚔️⏤͟͟͞͞★*`;
+
+    return api.sendMessage(finalMsg, threadID, messageID);
+  } catch (error) {
+    console.error("Pollinations error:", error);
+
+    const backupReplies = [
+      "Server bhi thoda thak gaya, par mai abhi bhi tumse baat karna chahti hu 😘",
+      "Reply nahi aayi, par mera dil tumhe yaad kar raha hai 💕",
+      "Kabhi kabhi silence bhi bada romantic hota hai 😏",
+      "Chalo mai tumhe ek smile bhejti hu 🙂✨",
+    ];
+    const random = backupReplies[Math.floor(Math.random() * backupReplies.length)];
+    
+    // Unique code for error messages too if it was a reply to bot
+    let uniqueCode = "";
+    if (event.messageReply && event.messageReply.senderID == api.getCurrentUserID()) {
+      const timestamp = Date.now();
+      const codeBase = senderID.toString() + timestamp.toString();
+      uniqueCode = `🆔 #${codeBase.substr(0, 6).toUpperCase()}`;
+    }
+    
+    return api.sendMessage(`${random}${uniqueCode ? ` ${uniqueCode}` : ''}\n\n*★᭄𝐎𝐰𝐧𝐞𝐫 𝙁𝘼𝙍𝘼𝙕⚔️⏤͟͟͞͞★*`, threadID, messageID);
   }
 };
 
-module.exports.run = async function({ api, event }) {
-  return api.sendMessage("Mujhse baat karne ke liye pehle 'hero' likho, phir mere message ka reply karo 😎", event.threadID, event.messageID);
+module.exports.run = async function ({ api, event, args }) {
+  // Agar koi directly command use kare to help message show kare
+  if (args.length === 0) {
+    return api.sendMessage(`🤖 Bot Commands:\n\n• Just type "bot" in your message\n• Send only emojis\n• Reply to my messages\n\n*★᭄𝐎𝐰𝐧𝐞𝐫 𝙁𝘼𝙍𝘼𝙕❣️☘️ ⚔️⏤͟͟͞͞★*`, event.threadID, event.messageID);
+  }
+  return;
 };
