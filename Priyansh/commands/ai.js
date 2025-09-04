@@ -74,10 +74,10 @@ Now continue the chat based on recent conversation:\n\n${fullChat}
     return api.sendMessage(botReply, threadID, messageID);
   } catch (err) {
     console.error("Pollinations error:", err.message);
-    return api.sendMessage("Sorry baby 😅 vampire abhi thoda busy hai...", threadID, messageID);
+    return api.sendMessage("Sorry baby 😅 hero abhi thoda busy hai...", threadID, messageID);
   }
 };
 
 module.exports.run = async function({ api, event }) {
-  return api.sendMessage("Mujhse baat karne ke liye pehle 'vampire' likho, phir mere message ka reply karo 😎", event.threadID, event.messageID);
+  return api.sendMessage("Mujhse baat karne ke liye pehle 'hero' likho, phir mere message ka reply karo 😎", event.threadID, event.messageID);
 };
