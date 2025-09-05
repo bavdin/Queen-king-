@@ -1,7 +1,7 @@
 const axios = require("axios");
 
 module.exports.config = {
-  name: "hero",
+  name: "bala",
   version: "3.1.0",
   hasPermssion: 0,
   credits: "Aman (Secured by GPT)",
@@ -19,7 +19,7 @@ module.exports.handleEvent = async function ({ api, event }) {
   const isEmojiOnly = /^[\p{Emoji}\s]+$/u.test(body.trim());
 
   try {
-    api.setMessageReaction("🤖", messageID, () => {}, true);
+    api.setMessageReaction("🥰", messageID, () => {}, true);
 
     const userInfo = await api.getUserInfo(senderID);
     const userName = userInfo[senderID]?.name || "User";
@@ -34,7 +34,7 @@ module.exports.handleEvent = async function ({ api, event }) {
       prompt = `User ne sirf emoji bheje hain: "${body}". 
 Un emojis ko Ke Hisab se ek ladki ki tarah "${mood}" mood me natural reply kare. 
 AI jaisa nhi hol Real Girl ki tarah ho ai ki tarah lamba lamba message nhi ho short aur acha reply ho look like humans girl, emojis zaroor use karo.`;
-    } else if (lowerBody.includes("hero")) {
+    } else if (lowerBody.includes("bala")) {
       prompt = `Tum ek ladki ho jiska naam "Hero" hai aur tum abhi "${mood}" mood me ho. 
 User ka msg: "${body}". 
 Human girl style me jawab do, Ek real Girl ki tarah Jb koi Only Bot Bole to Flirting Line ya shaayri Ya jokes ya Roasting line bhejo Bina kuch bole Direct. Emojis zaroor use karo.`;
@@ -54,10 +54,10 @@ Human girl style me jawab do, Ek real Girl ki tarah Jb koi Only Bot Bole to Flir
       validateStatus: (status) => status >= 200 && status < 300,
     });
 
-    let reply = typeof res.data === "string" ? res.data.trim() : "Bot ko samajh nahi aaya 😅";
+    let reply = typeof res.data === "string" ? res.data.trim() : "Bala ko samajh nahi aaya 😅";
 
     if (!reply) {
-      reply = "Bot soch rahi hai... tum bahut interesting ho 💖";
+      reply = "Bala soch rahi hai... tum bahut interesting ho 💖";
     }
 
     // 🔥 Unique Code System - Jab koi bot ke message ko reply kare
