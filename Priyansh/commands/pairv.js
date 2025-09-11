@@ -59,7 +59,7 @@ module.exports.run = async function ({ api, event, Threads, Users }) {
     ];
 
     const message = {
-      body: `🥰 𝐏𝐀𝐈𝐑𝐈𝐍𝐆! 🍒\n\n💙🅂🆄︎🄲🅲︎🄴🆂︎🅂🅵︎🅄🅻︎❤️\n\n𝐋𝐨 𝐌𝐢𝐥 𝐠𝐲𝐢 𝐀𝐚𝐩𝐤𝐢 𝐒𝐞𝐭𝐭𝐢𝐧𝐠\n\n💕 𝗟𝗼𝘃𝗲💝𝗥𝗮𝘁𝗶𝗼: ${loveRate}%\n\n${senderName} 💓 ${pairName}\n\n👉 ${randomPhrase}\n\n© - ཫ༄𒁍⃝𝐌𝐀𝐑⃟𝐈𝐍𝐀`,
+      body: `🥰 𝐏𝐀𝐈𝐑𝐈𝐍𝐆! 🍒\n\n💙🅂🆄︎🄲🅲︎🄴🆂︎🅂🅵︎🅄🅻︎❤️\n\n𝐋𝐨 𝐌𝐢𝐥 𝐠𝐲𝐢 𝐀𝐚𝐩𝐤𝐢 𝐒𝐞𝐭𝐭𝐢𝐧𝐠\n\n💕 𝗟𝗼𝘃𝗲💝𝗥𝗮𝘁𝗶𝗼: ${loveRate}%\n\n${senderName} 💓 ${pairName}\n\n👉 ${randomPhrase}\n\n© - ཫ༄𒁍⃝𝐅𝐀𝐑𝐀𝐙`,
       mentions: arrayTag,
       attachment: attachments
     };
