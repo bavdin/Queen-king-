@@ -1,8 +1,8 @@
 module.exports.config = {
-  name: "pair",
+  name: "pairr",
   version: "1.0.0", 
   hasPermssion: 0,
-  credits: "🌺 𝐅𝐀𝐑𝐀𝐙"
+  credits: "🌺𝐅𝐀𝐑𝐀𝐙"
   description: "pairing",
   commandCategory: "Love", 
   usages: "pair", 
