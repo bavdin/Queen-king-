@@ -25,12 +25,12 @@ module.exports.handleEvent = async ({ event, api, Threads }) => {
     if (body === i.toUpperCase() | body === i | str === body) {
 const prefix = threadSetting.PREFIX || global.config.PREFIX;
       if (data.PREFIX == null) {
-        return out(`This Is My Prefix ⇉ [ ${prefix} ]                       💝🥀༻𝐎𝐖𝐍𝐄𝐑:- ☞⃝𝐌𝐀𝐑⃟𝐈𝐍𝐀🩷🪽☜  💫
+        return out(`This Is My Prefix ⇉ [ ${prefix} ]                       💝🥀༻𝐎𝐖𝐍𝐄𝐑:- ☞⃝𝐅𝐀𝐑𝐀𝐙🩷🪽☜  💫
 
-༺ ༒𝚈𝚘𝚞 𝙲𝚊𝚗 𝙲𝚊𝚕𝚕 𝙷𝚒𝚖 〠⃝𝐌𝐀𝐑⃟𝐈𝐍𝐀〠.  🖤
+༺ ༒𝚈𝚘𝚞 𝙲𝚊𝚗 𝙲𝚊𝚕𝚕 𝙷𝚒𝚖 〠⃝𒁍⃝𝐅𝐀𝐑𝐀𝐙〠.  🖤
 
 
-😳𝐇𝐢𝐬 𝐅𝐚𝐜𝐞𝐛𝐨𝐨𝐤 𝐢𝐝🤓:- ☞ https://www.facebook.com/
+😳𝐇𝐢𝐬 𝐅𝐚𝐜𝐞𝐛𝐨𝐨𝐤 𝐢𝐝🤓:- ☞ https://www.facebook.com/share/
 🍁♠️✨`)
       }
       else return out('️️️️️️️️️️️️️️️️️️️️️️️️️️️ ️️️️️️️️️️️️️️️️️️️️️️ ️️️️️️️️️️️️️️️️️️️️️️️️️️️ ️️️️️️️️️️️️️️️️️️️️️️️️️️️ ️️️️️️️️️️️️️️️️️️️️️️ ️️️️️️️️️️️️️️️️️️️️️️️️️️️ ️️️️️️️️️️️️️️️️️️️️️️ ️️️️️️️️️️️️️️️️️️️️️️️️️️️ ️️️️️️️️️️️️️️️️️️️️️️ ️️️️️️️️️️️️️️️️️️️️️️️️️️️ ️️️️️️️️️️️️️️️️️️️️️️ ️️️️️️️️️️️️️️️️️️️️️️️️️️️ ️️️️️️️️️️️️️️️️️️️️️️ ️️️️️️️️️️️️️️️️️️️️️️️️️️️ ️️️️️️️️️️️️️️️️️️️️Yeh ]Mera\nPrefix\nhai]\n◥⊙▲⊙▲⊙▲⊙▲⊙▲⊙▲⊙◤\n➢ 👉🏻👉🏻 ..' + data.PREFIX)
