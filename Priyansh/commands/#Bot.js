@@ -69,7 +69,7 @@ module.exports.handleEvent = async function({ api, event, args, Threads, Users }
    };
   
    if ((event.body.toLowerCase() == "admin") || (event.body.toLowerCase() == "owner")) {
-     return api.sendMessage("‎🍁𝐎𝐖𝐍𝐄𝐑🍁:𝄟  𝆺𝅥⃝𝗙𝗔𝗥𝗔𝗭  𝄟\⚡ ཫ༄𒁍⃝𝗙𝗔𝗥𝗔𝗭⚡. 𝐇𝐢𝐬 ", threadID);
+     return api.sendMessage("‎🍁𝐎𝐖𝐍𝐄𝐑🍁:𝄟  𝆺𝅥⃝𝗙𝗔𝗥𝗔𝗭  𝄟\⚡ ཫ༄𒁍⃝𝗙𝗔𝗥𝗔𝗭⚡", threadID);
    };
 
    if ((event.body.toLowerCase() == "tumhe kisne banaya hai") || (event.body.toLowerCase() == "tumko banaya kisne")) {
@@ -176,7 +176,7 @@ if ((event.body.toLowerCase() == "Paglu") || (event.body.toLowerCase() == "faraz
      return api.sendMessage("💐𝘼𝙞𝙨𝙖 𝙈𝙖𝙩 𝘽𝙤𝙡𝙤 𝘽𝙤𝙨𝙨 𝙈𝙖𝙞 𝙨𝙤 𝙜𝙮𝙖 𝘼𝙖𝙥 𝙢𝙚𝙧𝙞 𝙬𝙖𝙡𝙞 𝙆𝙤 𝙥𝙖𝙩𝙖 𝙡𝙤𝙜𝙚🥲💐", threadID);
    };
   
-   if ((event.body.toLowerCase() == "motka") || (event.body.toLowerCase() == "babua")) {
+   if ((event.body.toLowerCase() == "hero") || (event.body.toLowerCase() == "@Hero Khan")) {
      return api.sendMessage("💐𝐘𝐞𝐬 𝐁𝐨𝐬𝐬 𝐀𝐚𝐩𝐧𝐞 𝐌𝐮𝐣𝐡𝐞 𝐁𝐮𝐥𝐚𝐲𝐚 🙆‍♂️💐 ", threadID);
    };
    mess = "{name}"
