@@ -57,7 +57,7 @@ Youtube Site : https://☆/
 
 ☣️Email: 
 
-⚠️Wp: +97122*****`, attachment: fs.createReadStream(__dirname + "/cache/join.jpg")} ,threadID));
+⚠️Wp: +97122*****`, attachment: fs.createReadStream(__dirname + "/cache/join.jpeg")} ,threadID));
 	}
 	else {
 		try {
