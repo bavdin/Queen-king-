@@ -14,7 +14,7 @@ module.exports.handleEvent = function({ api, event, client, __GLOBAL }) {
 	var { threadID, messageID } = event;
 	if (event.body.indexOf("Syapa")==0 || event.body.indexOf("syapa")==0 || event.body.indexOf("♟️")==0 || event.body.indexOf("Rasgulle")==0) {
 		var msg = {
-				body: "𝗦𝗬𝗔𝗣𝗔 𝗢𝗪𝗡𝗘𝗥 𝗖𝗛𝗨𝗭𝗔 𝗞𝗘 𝗗𝗢𝗦𝗧 𝗛𝗔𝗜𝗡\n\n➜𝗙𝗥𝗜𝗘𝗡𝗗✪\n     *┏━━ೋ•  •ೋ━━┓*\n                𝐒𝐘𝐀𝐏𝐀\n    *┗━━ೋ•  •ೋ━━┛*\n\n✦𝐅𝐁 𝐋𝐢𝐧𝐤✦\n\nhttps://www.facebook.com/share/1BUFRGt14a/mibextid=ZbWKwL",
+				body: "SHIBLI MERE OWNER KI WAIF HE\n\n➜WAIF✪\n     *┏━━ೋ•  •ೋ━━┓*\n                𝐒𝐘𝐀𝐏𝐀\n    *┗━━ೋ•  •ೋ━━┛*\n\n✦𝐅𝐁 𝐋𝐢𝐧𝐤✦\n\n",
 				attachment: 
 fs.createReadStream(__dirname + `/noprefix/Shayan.jpg`)
 			}
